@@ -18,7 +18,6 @@ public class Lotta {
 	public Entita combatti() {
 		boolean turnoGiocatore = true;
 		while(!(giocatore.getVita()<=0 || mostro.getVita()<=0)) {
-			System.out.println(giocatore.getVita() + "  " + mostro.getVita());
 			if (turnoGiocatore) {
 				mostro.setVita(mostro.getVita()-calcolcoDanno(giocatore, mostro));
 				turnoGiocatore = false;
