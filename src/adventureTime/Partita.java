@@ -149,6 +149,7 @@ public class Partita {
 			case INVENTARIO:
 				Menu<Oggetti> inventarioGiocatore = new Menu<Oggetti>("inventario");
 				Function<Oggetti,String> stempaNomeOggetti  = (x) -> x.getTipoOgg() == Oggetti.Tipo.Consumabile ? String.format("%s (%d)", x.getNomeOgg(),giocatore.getInventario().get(x)) : x.getNomeOgg();
+				inventarioGiocatore.setMetodiStampa(stempaNomeOggetti);
 				ArrayList<Oggetti> inventarioArray = new ArrayList<Oggetti>();
 				for(Map.Entry<Oggetti, Integer> a : giocatore.getInventario().entrySet())
 					inventarioArray.add(a.getKey());
