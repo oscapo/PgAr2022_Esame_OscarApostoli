@@ -3,6 +3,11 @@ package adventureTime;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * classe per gestire il personaggio
+ * @author apost
+ *
+ */
 public class Personaggio extends Entita {
 	
 	private Map<Oggetti,Integer> inventario = new HashMap<Oggetti,Integer> ();
@@ -14,6 +19,11 @@ public class Personaggio extends Entita {
 		this.setDif(5);
 	}
 	
+	/**
+	 * metodo utilizzato per aggiunger un ogetto al personaggio
+	 * @param oggDaAggiungere : oggetto da aggiungere
+	 * @return
+	 */
 	public String aggiungiOgg (Oggetti oggDaAggiungere) {
 		if(inventario.size() == 6 && oggettoPresente(oggDaAggiungere) == null) {
 			return "Inventario pieno";
@@ -46,6 +56,11 @@ public class Personaggio extends Entita {
 		}
 	}
 	
+	/**
+	 * metdodo per rimuovere un ogetto dall'inventario
+	 * @param oggDaRimuovere : oggetto da rimuovere
+	 * @return
+	 */
 	public String rimuoviOgg (Oggetti oggDaRimuovere) {
 		oggDaRimuovere = oggettoPresente(oggDaRimuovere);
 		inventario.put(oggDaRimuovere, inventario.get(oggDaRimuovere) - 1);
@@ -59,6 +74,11 @@ public class Personaggio extends Entita {
 		return String.format("consumato %s (%d)", oggDaRimuovere.getNomeOgg(), inventario.get(oggDaRimuovere));
 	}
 
+	/**
+	 * metodoo per controllare se un oggeto o un tipo di oggetto è gia presente i nventario
+	 * @param oggetoDaControllare
+	 * @return
+	 */
 	private Oggetti oggettoPresente(Oggetti oggetoDaControllare) {
 		for (Map.Entry<Oggetti,Integer> confronto : inventario.entrySet())
 			if(confronto.getKey().getNomeOgg().equals(oggetoDaControllare.getNomeOgg()) || // controllo per nome identificativo oggetto

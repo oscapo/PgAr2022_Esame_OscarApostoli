@@ -1,5 +1,11 @@
 package adventureTime;
 
+
+/**
+ * classe per rappresentare gli oggetti
+ * @author apost
+ *
+ */
 public class Oggetti {
 
 	private String nomeOgg;

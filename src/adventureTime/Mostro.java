@@ -5,8 +5,17 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * classe per rappresentare un mostro
+ * @author apost
+ *
+ */
 public class Mostro extends Entita {
 	
+	/**
+	 * funzione per generare un mostro
+	 * @return
+	 */
 	public static Mostro generaMostro() {
 		Random rand = new Random();
 		Mostro ritorno = new Mostro();

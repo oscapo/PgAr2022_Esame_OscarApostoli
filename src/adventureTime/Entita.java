@@ -1,5 +1,11 @@
 package adventureTime;
 
+
+/**
+ * calasse astreaata per rappresentare una qulasiasi entita di gioco
+ * @author apost
+ *
+ */
 public abstract class Entita {
 	private String nome;
 	private int vita, atk, dif;

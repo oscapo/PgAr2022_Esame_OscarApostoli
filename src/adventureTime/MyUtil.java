@@ -4,6 +4,10 @@ import java.util.Random;
 
 public class MyUtil {
 	
+	/**
+	 * funzione per ottenre un oggetto da un cassa (non si necessita di salire su di una cassa, basta starci vicino)
+	 * @return
+	 */
 	public static Oggetti daiOggetto () {
 		Random rand = new Random();
 		int scelta = rand.nextInt(100);

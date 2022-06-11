@@ -2,6 +2,11 @@ package adventureTime;
 
 import java.util.Random;
 
+/**
+ * classe per gestire la lotta tra mostro e allenatore
+ * @author apost
+ *
+ */
 public class Lotta {
 	private Entita giocatore, mostro;
 
