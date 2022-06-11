@@ -3,10 +3,10 @@
 
 |                |                 |
 | -------------- | --------------- |
-| Nome | ** Oscar ** |
-| Cognome | ** Apostoli ** |
-| Matricola | ** 736810 ** |
-| Corso di Studi | ** Automazione industriale ** |
+| Nome | **Oscar** |
+| Cognome | **Apostoli** |
+| Matricola | **736810** |
+| Corso di Studi | **Automazione industriale** |
 
  ## Moduli Implementati
 
