@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.function.Function;
 
+
+/**
+ * classe per gestire la partita
+ * @author apost
+ *
+ */
 public class Partita {
 
 	private Livello corrente;
@@ -25,7 +31,7 @@ public class Partita {
 			corrente.stampa();
 			boolean continua;
 			char casellaCorrente = 0;
-			do {
+			do { // gestisce le azioni
 				continua = false;
 				switch(InputDati.leggiStringaNonVuota("Azione richiesta> ").toLowerCase()) {
 				case "a":
@@ -74,6 +80,7 @@ public class Partita {
 				default: System.out.println("Azione non valida");
 				}
 			} while (continua);
+			//gestione eventi
 			if(casellaCorrente == 't' || casellaCorrente == 'T') {
 				for (Map.Entry<Livello, Map<Livello,Integer[]>> partenza : cdg.getCampoDaGioco().ottieniArchi().entrySet())
 					if(partenza.getKey() == corrente)
@@ -108,10 +115,19 @@ public class Partita {
 		}while (!finePartita);
 	}
 
+	/**
+	 * metodo per controllare se una cassella è "calpestabile" dal giocatore
+	 * @param verifica : valore della casella
+	 * @return
+	 */
 	private boolean casellaCalpestabile (Character verifica) {
 		return verifica != null && verifica !='#' && verifica != 'C';
 	}
 
+	/**
+	 * metodo per controllare se i giocatore è vicino ad una cassa
+	 * @return
+	 */
 	private int cassaVicina () {
 		Character[] dintorni = corrente.dintonrniGiocatore();
 		for (int i=0; i< dintorni.length; i++)
@@ -120,6 +136,10 @@ public class Partita {
 		return -1;
 	}
 	
+	/**
+	 * menu di gioco
+	 * @return
+	 */
 	private boolean menuDiGioco() {
 		for(;;) {
 			int scelta = menuDiGioco.scegli()-1;
